@@ -1,0 +1,6 @@
+run_id,case_id,expected_class,exit_code,validity,raw_alert_count,deduped_alert_count,rules_fired
+malicious_payload_other_name_20261108T072433118842472Z,malicious_payload_other_name,malicious,0,valid,3,1,PBL Improved Script Execution From Tmp=1
+malicious_payload_alt_interpreter_20261108T072444257637799Z,malicious_payload_alt_interpreter,malicious,0,valid,4,2,PBL Improved Script Execution From Tmp=1;PBL OpenMetadata Payload Execution=1
+malicious_token_alt_tool_20261108T072455394327187Z,malicious_token_alt_tool,malicious,0,valid,1,1,PBL Improved ServiceAccount Token Access Any Tool=1
+normal_tmp_script_other_name_20261108T072507513678571Z,normal_tmp_script_other_name,benign,0,valid,3,1,PBL Improved Script Execution From Tmp=1
+normal_tmp_script_alt_interpreter_20261108T072517638893783Z,normal_tmp_script_alt_interpreter,benign,0,valid,3,1,PBL Improved Script Execution From Tmp=1

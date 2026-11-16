@@ -1,0 +1,62 @@
+# Improved Category 1 rules — additive to the baseline.
+#
+# Deployed ALONGSIDE category1/falco-values.yaml (never edited), via:
+#   helm upgrade falco falcosecurity/falco -n falco --version 9.2.2 \
+#     -f category1/falco-values.yaml -f rules/improved_falco_values.yaml --wait
+# Helm deep-merges the two `customRules` maps, so both pbl_rules.yaml (baseline)
+# and pbl_rules_improved.yaml (this file) are mounted and loaded together — baseline
+# and improved rules run concurrently against the same live traffic. See
+# docs/rule_rationale.md for the reasoning behind each rule and its known tradeoffs.
+#
+# All `priority` values are written in the schema's expected ALL-CAPS form
+# (confirmed via `falco --validate` in Phase 0 — see docs/environment.md), unlike
+# the baseline file's mixed-case values, which is a deliberate, documented fix here,
+# not a silent change to the frozen baseline.
+customRules:
+  pbl_rules_improved.yaml: |-
+    - rule: PBL Improved Script Execution From Tmp
+      desc: >
+        Any shell interpreter executing a script whose own first argument is a path
+        under /tmp, regardless of the script's filename or which shell binary runs it.
+        Generalizes the baseline's PBL OpenMetadata Payload Execution rule, which only
+        matches proc.name=sh and the literal substring /tmp/openmetadata-payload.sh —
+        confirmed in Phase 4 to miss the same technique under a different filename
+        (malicious_payload_other_name) and to only catch an interpreter swap by
+        accident, via an unrelated wrapper process (malicious_payload_alt_interpreter;
+        see results/phase4_dev_case_findings.md). This rule keys on the actually
+        executed process's own proc.args (its first argument), not an ancestor
+        process's command line, so it is not fooled by the same wrapper-shell
+        coincidence either.
+      condition: >
+        container and spawned_process and
+        proc.name in (shell_binaries) and
+        (proc.args startswith /tmp/ or proc.args startswith "/tmp ")
+      output: >
+        PBL_EVENT scenario=improved case=tmp_script_execution action=script_exec_from_tmp
+        file=%proc.args process=%proc.name command=%proc.cmdline
+        container=%container.name pod=%k8s.pod.name namespace=%k8s.ns.name
+      priority: WARNING
+      tags: [pbl, pbl-improved, openmetadata, execution]
+
+    - rule: PBL Improved ServiceAccount Token Access Any Tool
+      desc: >
+        The mounted ServiceAccount token file opened for reading by any process, not
+        only `cat`. Generalizes the baseline's PBL OpenMetadata ServiceAccount Token
+        Access rule, which requires proc.name=cat and is confirmed in Phase 4 to miss
+        the identical credential-access technique when read with a different tool
+        (malicious_token_alt_tool, read via `head`). The file path condition itself is
+        unchanged from the baseline rule, so this rule's known limitation (a path
+        containing these substrings, not necessarily the real mount) is inherited
+        unmodified — see docs/rule_rationale.md and the held-out
+        malicious_token_decoy_path case in tests/test_matrix.csv.
+      condition: >
+        container and evt.type in (open, openat, openat2) and
+        evt.is_open_write=false and
+        fd.name contains kubernetes.io/serviceaccount and fd.name endswith token and
+        container.name = backend
+      output: >
+        PBL_EVENT scenario=improved case=token_access_any_tool action=serviceaccount_token_read
+        file=%fd.name process=%proc.name command=%proc.cmdline
+        container=%container.name pod=%k8s.pod.name namespace=%k8s.ns.name
+      priority: WARNING
+      tags: [pbl, pbl-improved, openmetadata, credential_access]

@@ -1,0 +1,6 @@
+run_id,case_id,expected_class,script,start_utc,end_utc,exit_code,validity
+malicious_payload_other_name_20261108T072433118842472Z,malicious_payload_other_name,malicious,tests/scripts/malicious_payload_other_name.sh,2026-11-08T07:24:33.119596198Z,2026-11-08T07:24:34.253800507Z,0,valid
+malicious_payload_alt_interpreter_20261108T072444257637799Z,malicious_payload_alt_interpreter,malicious,tests/scripts/malicious_payload_alt_interpreter.sh,2026-11-08T07:24:44.258530416Z,2026-11-08T07:24:45.390947927Z,0,valid
+malicious_token_alt_tool_20261108T072455394327187Z,malicious_token_alt_tool,malicious,tests/scripts/malicious_token_alt_tool.sh,2026-11-08T07:24:55.395232174Z,2026-11-08T07:24:57.509957392Z,0,valid
+normal_tmp_script_other_name_20261108T072507513678571Z,normal_tmp_script_other_name,benign,tests/scripts/normal_tmp_script_other_name.sh,2026-11-08T07:25:07.514367316Z,2026-11-08T07:25:07.635442598Z,0,valid
+normal_tmp_script_alt_interpreter_20261108T072517638893783Z,normal_tmp_script_alt_interpreter,benign,tests/scripts/normal_tmp_script_alt_interpreter.sh,2026-11-08T07:25:17.639649719Z,2026-11-08T07:25:17.762612349Z,0,valid

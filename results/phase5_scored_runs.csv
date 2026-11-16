@@ -1,0 +1,40 @@
+run_id,case_id,expected_class,exit_code,validity,raw_alert_count,deduped_alert_count,rules_fired,baseline_classification,combined_classification
+baseline_normal_20261108T073501465701816Z,baseline_normal,benign,0,valid,8,6,PBL Normal Configuration Read=2;PBL Normal Curl Health Check=1;PBL Normal Temporary File Activity=3,TN,TN
+baseline_abnormal_1_20261108T073511758971165Z,baseline_abnormal_1,malicious,0,valid,2,2,PBL OpenMetadata Environment Discovery=2,TP,TP
+baseline_abnormal_2_20261108T073523887345943Z,baseline_abnormal_2,malicious,0,valid,2,2,PBL Improved ServiceAccount Token Access Any Tool=1;PBL OpenMetadata ServiceAccount Token Access=1,TP,TP
+baseline_abnormal_3_20261108T073536017640790Z,baseline_abnormal_3,malicious,0,valid,5,3,PBL Improved Script Execution From Tmp=1;PBL OpenMetadata Payload Execution=2,TP,TP
+normal_tmp_script_other_name_20261108T073547146888818Z,normal_tmp_script_other_name,benign,0,valid,3,1,PBL Improved Script Execution From Tmp=1,TN,FP
+normal_tmp_script_alt_interpreter_20261108T073557272006708Z,normal_tmp_script_alt_interpreter,benign,0,valid,3,1,PBL Improved Script Execution From Tmp=1,TN,FP
+normal_config_read_other_file_20261108T073607399247777Z,normal_config_read_other_file,benign,0,valid,0,0,,TN,TN
+normal_legit_env_diagnostic_20261108T073617525024641Z,normal_legit_env_diagnostic,benign,0,valid,1,1,PBL OpenMetadata Environment Discovery=1,FP,FP
+malicious_payload_other_name_20261108T073627650606621Z,malicious_payload_other_name,malicious,0,valid,3,1,PBL Improved Script Execution From Tmp=1,FN,TP
+malicious_payload_alt_interpreter_20261108T073638780104568Z,malicious_payload_alt_interpreter,malicious,0,valid,4,2,PBL Improved Script Execution From Tmp=1;PBL OpenMetadata Payload Execution=1,TP,TP
+malicious_token_alt_tool_20261108T073649914614176Z,malicious_token_alt_tool,malicious,0,valid,1,1,PBL Improved ServiceAccount Token Access Any Tool=1,FN,TP
+malicious_credential_existence_probe_20261108T073702046574735Z,malicious_credential_existence_probe,malicious,0,valid,0,0,,FN,FN
+malicious_token_decoy_path_20261108T073712174186111Z,malicious_token_decoy_path,benign,0,valid,2,2,PBL Improved ServiceAccount Token Access Any Tool=1;PBL OpenMetadata ServiceAccount Token Access=1,FP,FP
+baseline_normal_20261108T073722298107286Z,baseline_normal,benign,0,valid,8,6,PBL Normal Configuration Read=2;PBL Normal Curl Health Check=1;PBL Normal Temporary File Activity=3,TN,TN
+baseline_abnormal_1_20261108T073732586756927Z,baseline_abnormal_1,malicious,0,valid,2,2,PBL OpenMetadata Environment Discovery=2,TP,TP
+baseline_abnormal_2_20261108T073744716843687Z,baseline_abnormal_2,malicious,0,valid,2,2,PBL Improved ServiceAccount Token Access Any Tool=1;PBL OpenMetadata ServiceAccount Token Access=1,TP,TP
+baseline_abnormal_3_20261108T073756839959675Z,baseline_abnormal_3,malicious,0,valid,5,3,PBL Improved Script Execution From Tmp=1;PBL OpenMetadata Payload Execution=2,TP,TP
+normal_tmp_script_other_name_20261108T073807971781836Z,normal_tmp_script_other_name,benign,0,valid,3,1,PBL Improved Script Execution From Tmp=1,TN,FP
+normal_tmp_script_alt_interpreter_20261108T073818098021677Z,normal_tmp_script_alt_interpreter,benign,0,valid,3,1,PBL Improved Script Execution From Tmp=1,TN,FP
+normal_config_read_other_file_20261108T073828223793050Z,normal_config_read_other_file,benign,0,valid,0,0,,TN,TN
+normal_legit_env_diagnostic_20261108T073838349423955Z,normal_legit_env_diagnostic,benign,0,valid,1,1,PBL OpenMetadata Environment Discovery=1,FP,FP
+malicious_payload_other_name_20261108T073848476288435Z,malicious_payload_other_name,malicious,0,valid,3,1,PBL Improved Script Execution From Tmp=1,FN,TP
+malicious_payload_alt_interpreter_20261108T073859606117277Z,malicious_payload_alt_interpreter,malicious,0,valid,4,2,PBL Improved Script Execution From Tmp=1;PBL OpenMetadata Payload Execution=1,TP,TP
+malicious_token_alt_tool_20261108T073910736663405Z,malicious_token_alt_tool,malicious,0,valid,1,1,PBL Improved ServiceAccount Token Access Any Tool=1,FN,TP
+malicious_credential_existence_probe_20261108T073922861492665Z,malicious_credential_existence_probe,malicious,0,valid,0,0,,FN,FN
+malicious_token_decoy_path_20261108T073932988543187Z,malicious_token_decoy_path,benign,0,valid,2,2,PBL Improved ServiceAccount Token Access Any Tool=1;PBL OpenMetadata ServiceAccount Token Access=1,FP,FP
+baseline_normal_20261108T073943120069068Z,baseline_normal,benign,0,valid,8,6,PBL Normal Configuration Read=2;PBL Normal Curl Health Check=1;PBL Normal Temporary File Activity=3,TN,TN
+baseline_abnormal_1_20261108T073953406232261Z,baseline_abnormal_1,malicious,0,valid,2,2,PBL OpenMetadata Environment Discovery=2,TP,TP
+baseline_abnormal_2_20261108T074005533643337Z,baseline_abnormal_2,malicious,0,valid,2,2,PBL Improved ServiceAccount Token Access Any Tool=1;PBL OpenMetadata ServiceAccount Token Access=1,TP,TP
+baseline_abnormal_3_20261108T074017661200187Z,baseline_abnormal_3,malicious,0,valid,5,3,PBL Improved Script Execution From Tmp=1;PBL OpenMetadata Payload Execution=2,TP,TP
+normal_tmp_script_other_name_20261108T074028789169517Z,normal_tmp_script_other_name,benign,0,valid,3,1,PBL Improved Script Execution From Tmp=1,TN,FP
+normal_tmp_script_alt_interpreter_20261108T074038913811601Z,normal_tmp_script_alt_interpreter,benign,0,valid,3,1,PBL Improved Script Execution From Tmp=1,TN,FP
+normal_config_read_other_file_20261108T074049043629851Z,normal_config_read_other_file,benign,0,valid,0,0,,TN,TN
+normal_legit_env_diagnostic_20261108T074059168977171Z,normal_legit_env_diagnostic,benign,0,valid,1,1,PBL OpenMetadata Environment Discovery=1,FP,FP
+malicious_payload_other_name_20261108T074109289103377Z,malicious_payload_other_name,malicious,0,valid,3,1,PBL Improved Script Execution From Tmp=1,FN,TP
+malicious_payload_alt_interpreter_20261108T074120426151204Z,malicious_payload_alt_interpreter,malicious,0,valid,4,2,PBL Improved Script Execution From Tmp=1;PBL OpenMetadata Payload Execution=1,TP,TP
+malicious_token_alt_tool_20261108T074131553517644Z,malicious_token_alt_tool,malicious,0,valid,1,1,PBL Improved ServiceAccount Token Access Any Tool=1,FN,TP
+malicious_credential_existence_probe_20261108T074143677194948Z,malicious_credential_existence_probe,malicious,0,valid,0,0,,FN,FN
+malicious_token_decoy_path_20261108T074153803475264Z,malicious_token_decoy_path,benign,0,valid,2,2,PBL Improved ServiceAccount Token Access Any Tool=1;PBL OpenMetadata ServiceAccount Token Access=1,FP,FP

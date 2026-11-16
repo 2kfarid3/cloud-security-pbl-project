@@ -2,6 +2,8 @@
 
 [한국어](README.md) | **English**
 
+> **Student project submission:** this testbed's Category 1 scripts and baseline rules below are reproduced here unmodified. For the project built on top of them (extended test matrix, improved detection rules, measured results, limitations), see [`CATEGORY1_PROJECT_README.md`](../CATEGORY1_PROJECT_README.md) at the repository root.
+
 ## Real Incident
 
 In 2024, attackers exploited remote-code-execution vulnerabilities in OpenMetadata deployments running on Kubernetes. Post-compromise activity included system reconnaissance, environment and credential discovery, followed by payload and shell execution. See the [2024 Microsoft Threat Intelligence analysis](https://www.microsoft.com/en-us/security/blog/2024/04/17/attackers-exploiting-new-critical-openmetadata-vulnerabilities-on-kubernetes-clusters/).

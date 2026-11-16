@@ -1,0 +1,13 @@
+run_id,case_id,expected_class,exit_code,validity,raw_alert_count,deduped_alert_count,rules_fired
+normal_20261108T065720292352445Z,normal,benign,0,valid,8,6,PBL Normal Configuration Read=2;PBL Normal Curl Health Check=1;PBL Normal Temporary File Activity=3
+abnormal_1_20261108T065730574116553Z,abnormal_1,malicious,0,valid,2,2,PBL OpenMetadata Environment Discovery=2
+abnormal_2_20261108T065742701606865Z,abnormal_2,malicious,0,valid,1,1,PBL OpenMetadata ServiceAccount Token Access=1
+abnormal_3_20261108T065754829334446Z,abnormal_3,malicious,0,valid,2,2,PBL OpenMetadata Payload Execution=2
+normal_20261108T065805964343645Z,normal,benign,0,valid,8,6,PBL Normal Configuration Read=2;PBL Normal Curl Health Check=1;PBL Normal Temporary File Activity=3
+abnormal_1_20261108T065816251829159Z,abnormal_1,malicious,0,valid,2,2,PBL OpenMetadata Environment Discovery=2
+abnormal_2_20261108T065828380036940Z,abnormal_2,malicious,0,valid,1,1,PBL OpenMetadata ServiceAccount Token Access=1
+abnormal_3_20261108T065840507536239Z,abnormal_3,malicious,0,valid,2,2,PBL OpenMetadata Payload Execution=2
+normal_20261108T065851635358272Z,normal,benign,0,valid,8,6,PBL Normal Configuration Read=2;PBL Normal Curl Health Check=1;PBL Normal Temporary File Activity=3
+abnormal_1_20261108T065901931081194Z,abnormal_1,malicious,0,valid,2,2,PBL OpenMetadata Environment Discovery=2
+abnormal_2_20261108T065914057788336Z,abnormal_2,malicious,0,valid,1,1,PBL OpenMetadata ServiceAccount Token Access=1
+abnormal_3_20261108T065926188974366Z,abnormal_3,malicious,0,valid,2,2,PBL OpenMetadata Payload Execution=2
